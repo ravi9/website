@@ -27,8 +27,6 @@ medperf --version
 
 Check profiles by running `medperf profile view`. You will see `server: https://localhost:8000` and the auth configuration used is `Local`.
 
-Now, make sure you are in the `rsna_ws` directory: run `cd rsna_ws`
-
 ## Training Setup with MedPerf (Model Owner)
 
 ```bash
@@ -43,7 +41,7 @@ medperf auth login -e modelowner@example.com
 
 ```bash
 medperf mlcube submit -n prep \
-    -m https://storage.googleapis.com/medperf-storage/rsna2023/mlcube.yaml
+    -m https://storage.googleapis.com/medperf-storage/testfl/mlcube_prep.yaml
 ```
 
 ### Define the training MLCube
@@ -53,10 +51,10 @@ medperf mlcube submit -n prep \
 ### Register the Training MLCube
 
 ```bash
-medperf mlcube submit -n testfl \
-    -m https://storage.googleapis.com/medperf-storage/rsna2023/mlcube_rsna.yaml \
-    -p https://storage.googleapis.com/medperf-storage/rsna2023/plan_final.yaml \
-    -a https://storage.googleapis.com/medperf-storage/rsna2023/init_weights_rsna2023.tar.gz
+medperf mlcube submit -n traincube \
+    -m https://storage.googleapis.com/medperf-storage/testfl/mlcube-cpu.yaml?v=2 \
+    -p https://storage.googleapis.com/medperf-storage/testfl/parameters-miccai.yaml \
+    -a https://storage.googleapis.com/medperf-storage/testfl/init_weights_miccai.tar.gz
 ```
 
 ### Register the Training Experiment
@@ -180,4 +178,139 @@ medperf auth login -e traincol2@example.com
 
 ```bash
 medperf training run -d 2 -t 1
+```
+
+## Inference Setup with MedPerf (Benchmark Owner)
+
+```bash
+medperf auth login -e benchmarkowner@example.com
+```
+
+### Register a reference model
+
+```bash
+medperf mlcube submit -n refmodel \
+    -m https://storage.googleapis.com/medperf-storage/testfl/mlcube_other.yaml
+```
+
+### Register the metrics MLCube
+
+- Prepare the metrics calculation logic that will be used for the evaluation and the benchmarking of multiple trained models on unseen data.
+
+```bash
+medperf mlcube submit -n metrics \
+    -m https://storage.googleapis.com/medperf-storage/testfl/mlcube_metrics.yaml \
+    -p https://storage.googleapis.com/medperf-storage/testfl/parameters_metrics.yaml
+```
+
+### Register the benchmark
+
+```bash
+medperf benchmark submit --name pathmnistbmk --description pathmnistbmk \
+    --demo-url https://storage.googleapis.com/medperf-storage/testfl/data/sample.tar.gz \
+    -p 1 -m 3 -e 4
+```
+
+The server admin should approve the benchmark.
+Run:
+
+```bash
+bash admin_benchmark_approval.sh
+```
+
+## Participate as a model owner (Model Owner)
+
+```bash
+medperf auth login -e modelowner@example.com
+```
+
+### Register your model
+
+- Export the trained model to an MLCube using GaNDLF
+
+```bash
+medperf mlcube submit -n trained \
+    -m https://storage.googleapis.com/medperf-storage/testfl/mlcube_trained.yaml
+```
+
+### Request participation in the benchmark
+
+```bash
+medperf mlcube associate -b 1 -m 5 -y
+```
+
+## Participate as a data owner (Inference data Owner)
+
+```bash
+medperf auth login -e testcol@example.com
+```
+
+### Process data using the data prep mlcube
+
+```bash
+medperf dataset create -p 1 -d datasets/test -l datasets/test --name testdata --description testdata --location testdata
+```
+
+### Register the dataset
+
+find Hash:
+
+```bash
+medperf dataset ls
+```
+
+```bash
+medperf dataset submit -d <hash_found>
+```
+
+### Request participation
+
+```bash
+medperf dataset associate -b 1 -d 3 -y
+```
+
+## Accepting Inference Participation (Benchmark Owner)
+
+```bash
+medperf auth login -e benchmarkowner@example.com
+```
+
+Accept inference participation requests (from the model owners and data owners)
+
+```bash
+medperf association approve -b 1 -m 5
+medperf association approve -b 1 -d 3
+```
+
+## Run Inference (Inference Data Owner)
+
+```bash
+medperf auth login -e testcol@example.com
+```
+
+### Start benchmark execution
+
+- models associated with the benchmark, including the reference model, will be executed on the data
+
+```bash
+medperf benchmark run -b 1 -d 3
+```
+
+### Submit inference results
+
+```bash
+medperf result submit -r b1m5d3 -y
+medperf result submit -r b1m3d3 -y
+```
+
+## Result collection (Benchmark Owner)
+
+```bash
+medperf auth login -e benchmarkowner@example.com
+```
+
+Pull and view inference results from the medperf server
+
+```bash
+medperf result view -b 1
 ```
