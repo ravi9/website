@@ -27,7 +27,7 @@ medperf --version
 
 Check profiles by running `medperf profile view`. You will see `server: https://localhost:8000` and the auth configuration used is `Local`.
 
-Now, make sure you are in the `rsna_ws` directory: run `cd rsna_ws`
+Now, make sure you are in the `rsna_ws` directory: run `cd ~/rsna_ws`
 
 ## Training Setup with MedPerf (Model Owner)
 
