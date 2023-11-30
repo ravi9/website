@@ -18,6 +18,7 @@ In 2021, **COFE** was used to conduct the largest to-date real world federation,
 
 ## Past Events
 
+- Hands on Deep Learning Lab at RSNA Annual Meet 2023
 - Tutorial in [MICCAI 2023](https://conferences.miccai.org/2023/en/)
 - Tutorial in [MICCAI 2022](https://intel.github.io/fl-tutorial/)
 
