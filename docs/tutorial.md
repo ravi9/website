@@ -1,5 +1,13 @@
 # Tutorial
 
+## Requirements
+
+To run this tutorial, you need a machine with the following requirements:
+
+- Internet access.
+- Web browser (to follow this tutorial and copy-paste commands).
+- An SSH-compatible terminal (Windows 10 onwards has the built-in [Windows Terminal](https://apps.microsoft.com/detail/9N0DX20HK701?launch=true&mode=full&referrer=bingwebsearch&ocid=bingwebsearch&hl=en-us&gl=US)).
+
 ## Setup
 
 For the tutorial, we will be using a local MedPerf server and a local mocked auth provider. The MedPerf client installed in your virtual machines is preconfigured to communicate with the local server.
