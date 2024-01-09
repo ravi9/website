@@ -14,7 +14,8 @@ In 2021, **COFE** was used to conduct the largest to-date real world federation,
 
 ## Upcoming Events
 
-- [Bridge Event at AAAI 2024](https://aaai.org/aaai-conference/aaai-24-bridge-list/#bp08)
+- [Bridge Event at AAAI 2024 - 19-20 Feb](https://aaai.org/aaai-conference/aaai-24-bridge-list/#bp08)
+- ISBI 2024 - 27-30 May
 
 ## Past Events
 
