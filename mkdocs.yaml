@@ -6,6 +6,7 @@ repo_name: CollaborativeFederatedLearningTutorials/website
 nav:
   - Introduction: index.md
   - Tutorial: tutorial.md
+  - AAAI-24 Schedule: aaai_2024.md
 
 theme:
   features:
