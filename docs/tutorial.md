@@ -1,5 +1,12 @@
 # Tutorial
 
+## Requirements
+
+To run this tutorial, you need a machine with the following requirements:
+
+- Internet access.
+- Web browser (to connect to codespaces).
+
 ## Setup
 
 For the tutorial, we will be using a local MedPerf server and a local mocked auth provider. The MedPerf client installed in your virtual machines is preconfigured to communicate with the local server.
