@@ -1,0 +1,2 @@
+FROM ghcr.io/collaborativefederatedlearningtutorials/base_docker:latest-cpu
+

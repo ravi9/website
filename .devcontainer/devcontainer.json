@@ -1,0 +1,13 @@
+{
+    "build": {
+		"context": "..",
+		"dockerfile": "Dockerfile"
+	},
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {
+            "moby": false
+        }
+    },
+    "postAttachCommand": "bash ./.devcontainer/postAttachCommand.sh",
+    "postCreateCommand": "bash ./.devcontainer/postCreateCommand.sh"
+  }
