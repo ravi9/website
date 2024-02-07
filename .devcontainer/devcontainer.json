@@ -8,6 +8,12 @@
             "moby": false
         }
     },
+    "hostRequirements": {"storage": "64gb"},
+    "customizations": {
+        "codespaces": {
+            "openFiles": ["docs/tutorial.md"]
+        }
+    },
     "postAttachCommand": "bash ./.devcontainer/postAttachCommand.sh",
     "postCreateCommand": "bash ./.devcontainer/postCreateCommand.sh"
   }
