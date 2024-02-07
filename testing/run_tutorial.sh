@@ -1,11 +1,6 @@
-# THIS IS NOT INTENDED TO BE RUN BY USERS
+# THIS is for developers to test the whole tutorial
 
-## run `conda activate medperf` on each new terminal
-
-## open a new terminal tutorial_ws. Run the local medperf server
-# sh setup.sh
-
-## open a new terminal tutorial_ws
+## Run the local medperf server
 
 ## reset everything:
 # cd ../medperf/server
@@ -16,10 +11,11 @@
 ## seed
 # python seed.py --demo benchmark
 
-## go back to the tutorial_ws folder
-cd ..
 # activate local profile
-medperf profile activate local
+# medperf profile activate local
+
+## All above are already done if using codespaces.
+## go to the tutorial ws. start running the tutorial.
 
 # login
 medperf auth login -e modelowner@example.com
@@ -75,7 +71,7 @@ medperf aggregator start -a 1 -t 1
 
 sleep 5
 
-exit  # Run below in new terminals
+exit  # Run below in NEW TERMINALS
 
 # # start collaborator 1
 conda activate medperf

@@ -11,10 +11,10 @@
     "hostRequirements": {"storage": "64gb"},
     "customizations": {
         "codespaces": {
-            "openFiles": ["docs/tutorial.md"]
+            "openFiles": ["../docs/tutorial.md"]
         }
     },
     "workspaceFolder": "/workspaces/website/tutorial",
-    "postAttachCommand": "bash ./.devcontainer/postAttachCommand.sh",
-    "postCreateCommand": "bash ./.devcontainer/postCreateCommand.sh"
+    "postAttachCommand": "bash /workspaces/website/.devcontainer/postAttachCommand.sh",
+    "postCreateCommand": "bash /workspaces/website/.devcontainer/postCreateCommand.sh"
   }
