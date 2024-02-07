@@ -14,6 +14,7 @@
             "openFiles": ["docs/tutorial.md"]
         }
     },
+    "workspaceFolder": "/workspaces/website/tutorial",
     "postAttachCommand": "bash ./.devcontainer/postAttachCommand.sh",
     "postCreateCommand": "bash ./.devcontainer/postCreateCommand.sh"
   }
