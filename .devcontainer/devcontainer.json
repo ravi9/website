@@ -8,7 +8,6 @@
             "moby": false
         }
     },
-    "hostRequirements": {"storage": "64gb"},
     "workspaceFolder": "/workspaces/website/tutorial",
     "postAttachCommand": "bash /workspaces/website/.devcontainer/postAttachCommand.sh",
     "postCreateCommand": "bash /workspaces/website/.devcontainer/postCreateCommand.sh"
