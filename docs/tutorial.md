@@ -7,35 +7,6 @@ To run this tutorial, you need a machine with the following requirements:
 - Internet access.
 - Web browser (to connect to codespaces).
 
-## Setup
-
-For the tutorial, we will be using a local MedPerf server and a local mocked auth provider. The MedPerf client installed in your virtual machines is preconfigured to communicate with the local server.
-
-Now to run the local server,
-
-Run:
-
-```bash
-conda activate medperf
-cd ~/medperf/server
-sh setup-dev-server.sh
-```
-
-## MedPerf Client Installation and Authentication
-
-All involved parties that intend to use the MedPerf client will have to signup for a MedPerf account, install the client, and login prior to using it.
-
-For our tutorial, we already setup the virtual machines with MedPerf preinstalled. We will use the `Local` profile config.
-
-```bash
-conda activate medperf
-medperf --version
-```
-
-Check profiles by running `medperf profile view`. You will see `server: https://localhost:8000` and the auth configuration used is `Local`.
-
-Now, make sure you are in the `rsna_ws` directory: run `cd ~/rsna_ws`
-
 ## Training Setup with MedPerf (Model Owner)
 
 ```bash
