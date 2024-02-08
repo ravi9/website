@@ -8,7 +8,7 @@ cp .env.local.local-auth .env
 # hotfix: use python3.9 in place of python
 sed -i 's/python /python3.9 /g' setup-dev-server.sh
 echo "Running a local MedPerf server"
-bash ./setup-dev-server.sh < /dev/null &>server.log &
+nohup bash ./setup-dev-server.sh < /dev/null &>server.log &
 sleep 30
 if [ ! -f ".already_seeded" ]; then
     echo "Setting up the local database"
