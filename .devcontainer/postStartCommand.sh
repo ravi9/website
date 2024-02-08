@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# pull FL image
+docker pull hasan7/fltest:0.0.0-cpu
+
 cd /medperf/server
 cp .env.local.local-auth .env
 # hotfix: use python3.9 in place of python
@@ -13,6 +16,3 @@ if [ ! -f ".already_seeded" ]; then
     touch .already_seeded
 fi
 medperf profile activate local
-
-# pull FL image
-docker pull hasan7/fltest:0.0.0-cpu
