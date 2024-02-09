@@ -8,6 +8,11 @@
             "moby": false
         }
     },
+    "hostRequirements": {
+		"memory": "8gb",
+		"storage": "32gb",
+        "cpus": 4
+	},
     "workspaceFolder": "/workspaces/website/tutorial",
     "postCreateCommand": "bash /workspaces/website/.devcontainer/postCreateCommand.sh",
     "postStartCommand": "bash /workspaces/website/.devcontainer/postStartCommand.sh",
