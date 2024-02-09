@@ -74,13 +74,11 @@ sleep 5
 exit  # Run below in NEW TERMINALS
 
 # # start collaborator 1
-conda activate medperf
 medperf auth login -e traincol1@example.com
 medperf training run -d 1 -t 1
 
 sleep 5
 
 # # start collaborator 2
-conda activate medperf
 medperf auth login -e traincol2@example.com
 medperf training run -d 2 -t 1
