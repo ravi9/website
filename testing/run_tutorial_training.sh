@@ -22,13 +22,13 @@ medperf auth login -e modelowner@example.com
 
 # register prep mlcube
 medperf mlcube submit -n prep \
-    -m https://storage.googleapis.com/medperf-storage/rsna2023/mlcube.yaml
+    -m https://storage.googleapis.com/medperf-storage/testfl/mlcube_prep.yaml
 
 # register training mlcube
 medperf mlcube submit -n testfl \
-    -m https://storage.googleapis.com/medperf-storage/rsna2023/mlcube_rsna.yaml \
-    -p https://storage.googleapis.com/medperf-storage/rsna2023/plan_final.yaml \
-    -a https://storage.googleapis.com/medperf-storage/rsna2023/init_weights_rsna2023.tar.gz
+    -m https://storage.googleapis.com/medperf-storage/testfl/mlcube-cpu.yaml?v=2 \
+    -p https://storage.googleapis.com/medperf-storage/testfl/parameters-miccai.yaml \
+    -a https://storage.googleapis.com/medperf-storage/testfl/init_weights_miccai.tar.gz
 
 # register training exp
 medperf training submit -n testtrain -d testtrain -p 1 -m 2
