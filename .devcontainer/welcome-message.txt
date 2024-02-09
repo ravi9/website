@@ -1,3 +1,0 @@
-👋 Welcome to COFE in GitHub Codespaces!
-
-🛠️  Please wait for the command below to run before interacting with the editor.
