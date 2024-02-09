@@ -11,6 +11,3 @@ tar -xf test.tar.gz -C $MYWORKSPACE/datasets/
 rm col1.tar.gz
 rm col2.tar.gz
 rm test.tar.gz
-
-# OVERWRITE the Readme file by the tutorial.md file to display on startup
-cp /workspaces/website/docs/tutorial.md $MYWORKSPACE/README.md
