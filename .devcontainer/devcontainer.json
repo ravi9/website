@@ -13,7 +13,6 @@
 		"storage": "32gb",
         "cpus": 4
 	},
-    "workspaceFolder": "/workspaces/website/tutorial",
     "postCreateCommand": "bash /workspaces/website/.devcontainer/postCreateCommand.sh",
     "postStartCommand": "bash /workspaces/website/.devcontainer/postStartCommand.sh",
     "postAttachCommand": "nohup bash /workspaces/website/.devcontainer/postAttachCommand.sh &",
