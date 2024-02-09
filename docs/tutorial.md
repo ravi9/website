@@ -7,6 +7,8 @@ To run this tutorial, you need a machine with the following requirements:
 - Internet access.
 - Web browser (to connect to codespaces).
 
+# Part 1: Federated Training
+
 ## Training Setup with MedPerf (Model Owner)
 
 ```bash
@@ -101,7 +103,7 @@ medperf training associate_dataset -t 1 -d 1
 ## Redo the same with collaborator 2
 
 ```bash
-bash shortcut.sh
+bash collab_shortcut.sh
 ```
 
 ## Accepting Training Participation (Model Owner)
@@ -159,6 +161,8 @@ medperf auth login -e traincol2@example.com
 ```bash
 medperf training run -d 2 -t 1
 ```
+
+# Part 2: Federated Evaluation
 
 ## Inference Setup with MedPerf (Benchmark Owner)
 
