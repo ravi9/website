@@ -16,5 +16,6 @@
     "workspaceFolder": "/workspaces/website/tutorial",
     "postCreateCommand": "bash /workspaces/website/.devcontainer/postCreateCommand.sh",
     "postStartCommand": "bash /workspaces/website/.devcontainer/postStartCommand.sh",
-    "postAttachCommand": "bash /workspaces/website/.devcontainer/postAttachCommand.sh"
+    "postAttachCommand": "bash /workspaces/website/.devcontainer/postAttachCommand.sh",
+    "waitFor":"postStartCommand"
   }
