@@ -38,7 +38,7 @@ bash admin_training_approval.sh
 
 # register aggregator
 medperf auth login -e aggowner@example.com
-medperf aggregator submit -n testagg -a $(hostname --fqdn) -p 50273
+medperf aggregator submit -n testagg -a $(hostname -A | cut -d " " -f 1) -p 50273
 
 # associate aggregator
 medperf aggregator associate -a 1 -t 1 -y
