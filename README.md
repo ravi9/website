@@ -62,8 +62,16 @@ medperf auth login -e aggowner@example.com
 
 ### register aggregator
 
+find hostname:
+
 ```bash
-medperf aggregator submit -n aggreg -a $(hostname --fqdn) -p 50273
+# This works for codespaces machine setup, for internal hostname.
+# Other machine setup may need another command.
+hostname -A | cut -d " " -f 1
+```
+
+```bash
+medperf aggregator submit -n aggreg -a <hostname_found> -p 50273
 ```
 
 ### Associate the aggregator with the experiment
