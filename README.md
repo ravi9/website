@@ -308,3 +308,12 @@ Pull and view inference results from the medperf server
 ```bash
 medperf result view -b 1
 ```
+
+# Part 3: Deep Learning Optimization with OpenVINO 
+
+- After launching this repo in Codespaces, In VS CODE, open `openvino_optimization/113-image-classification-quantization/113-image-classification-quantization.ipynb`
+- Click on `Select Kernel` near top-right.
+- A prompt appears, Click on `Install/Enable suggested extensions Python + Jupyter`
+- Wait for a moment to complete installation..
+- A prompt appears, Click on `Python Environments...` and then Select `Python 3.9.18 /bin/python3.9`
+- Follow the instructions in the notebook..
